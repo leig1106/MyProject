@@ -7,14 +7,19 @@ class Get_Config_Value(object):
     传入section和option，获取该配置项的值
     """
 
-    def __init__(self,section,option):
-        self.section = section
-        self.option = option
+    def __init__(self):
+        """
+        读取配置文件
+        """
+        file = os.path.dirname(os.path.abspath('.')) + '\config\config.ini'
+        self.conf = configparser.ConfigParser()
+        self.conf.read(file)
 
-    def get_value(self):
-        file = os.path.dirname(os.path.abspath('.'))+'\config\config.ini'
-        conf = configparser.ConfigParser()
-        conf.read(file)
-        value = conf.get(self.section,self.option)
-        return value
+    def get_options(self,section):
+        return self.conf.options(section)
+
+
+    def get_value(self,section,option):
+        return self.conf.get(section,option)
+
 

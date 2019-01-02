@@ -8,7 +8,7 @@ import unittest
 class BaiduSearch(unittest.TestCase):
 
 
-    url = Get_Config_Value('testServer','URL').get_value()
+    url = Get_Config_Value().get_value('testServer','URL')
 
     @classmethod
     def setUpClass(cls):

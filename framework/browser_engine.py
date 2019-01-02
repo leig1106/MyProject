@@ -15,7 +15,7 @@ class BrowserEngine(object):
         通过if语句，来控制初始化不同浏览器的启动，默认是启动Chrome
         :return: driver
         """
-        browsertype = Get_Config_Value('browserType','browserName').get_value()
+        browsertype = Get_Config_Value().get_value('browserType','browserName')
         mylogger.info('你选择了%s浏览器' % browsertype)
 
         if browsertype == 'FireFox':

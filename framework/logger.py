@@ -2,8 +2,8 @@
 import logging,time,os
 from config.get_config_value import Get_Config_Value
 
-write_log_to_file = Get_Config_Value('configuration','IS_WRITE_LOG_TO_FILE').get_value()
-write_log_to_stream = Get_Config_Value('configuration','IS_WRITE_LOG_TO_STREAM').get_value()
+write_log_to_file = Get_Config_Value().get_value('configuration','IS_WRITE_LOG_TO_FILE')
+write_log_to_stream = Get_Config_Value().get_value('configuration','IS_WRITE_LOG_TO_STREAM')
 
 class Logger(object):
 
